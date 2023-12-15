@@ -99,10 +99,10 @@ const Header = () => {
             <li className="nav-item"><Link className="nav-link active text-primary" aria-current="page" to="/login"><button class="btn btn-primary text-white">login/Signup</button></Link></li>
             
           </ul> 
-          <form className="d-flex">
+          {/* <form className="d-flex">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          </form> */}
         </div>
       </div>
     </nav>

@@ -1,10 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faX } from '@fortawesome/free-solid-svg-icons';
+import RazorpayPayment from '../RazorpayPayment';
 
 
 const Cart = () => {
+   
+    
+
     return (
         <>
             <div className='detailPageBanner'>
@@ -130,19 +133,18 @@ const Cart = () => {
                             <div className='row'>
                                 <div className='col-md-6'>
                                     <h6 className='py-4'>Subtotal</h6>
-                                    <h6 className='py-4'>Total</h6>
                                     <h6 className='py-4'>GST(18%)</h6>
+                                    <h6 className='py-4'>Total</h6>
                                 </div>
                                 <div className='col-md-6'>
                                     <h6 className='py-4'>5000.00 Rs-/</h6>
-                                    <h6 className='py-4'>5000.00 Rs-/</h6>
                                     <h6 className='py-4'>50.00 Rs-/</h6>
+                                    <h6 className='py-4'>5050.00 Rs-/</h6>
+                                    
                                 </div>
                                 <hr />
                                 <div className='col-md-12'>
-                                    <Link to="/payment">
-                                        <button className='btn btn-outline-primary fs-5 mt-3'>Continue to checkout</button>
-                                    </Link>
+                                    <RazorpayPayment />
                                 </div>
                                 <div className='col-md-12'>
                                     <div className='row py-5 mx-auto'>

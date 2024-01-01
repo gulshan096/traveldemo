@@ -14,6 +14,9 @@ import Header from './layout/Header';
 import Footer from './layout/Footer';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Purchase from './pages/Purchase';
+import RazorpayPayment from './RazorpayPayment';
+
 
 
 
@@ -34,6 +37,8 @@ function App() {
             <Route path='cart' Component={Cart} />
             <Route path='login' Component={Login} />
             <Route path='register' Component={Register} />
+            <Route path='purchase' Component={Purchase} />
+            <Route path='/pay' Component={RazorpayPayment} />
         </Routes>
         <Footer />
       </Router>

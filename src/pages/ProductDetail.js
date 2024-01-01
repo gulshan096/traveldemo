@@ -19,9 +19,9 @@ const ProductDetail = () => {
 
       <section className='container py-5'>
         <div className='row'>
-          <div className='col-lg-6'>
+          <div className='col-lg-6 col-12'>
             <div className='row g-1'>
-              <div className='col-lg-2 product-small-img'>
+              <div className='col-lg-2 cpl-2 product-small-img'>
                   <div className='item'>
                     <img src="https://rukminim2.flixcart.com/image/128/128/xif0q/t-shirt/w/o/6/4xl-db1024-3bros-original-imagt7byhhrqdkym.jpeg" alt='' onClick={() => { getImage('https://rukminim2.flixcart.com/image/128/128/xif0q/t-shirt/w/o/6/4xl-db1024-3bros-original-imagt7byhhrqdkym.jpeg') }} />
                   </div>
@@ -38,12 +38,12 @@ const ProductDetail = () => {
                     <img src="https://rukminim2.flixcart.com/image/128/128/xif0q/t-shirt/d/c/u/4xl-db1024-3bros-original-imagt7byg5aw9yqs.jpeg" alt='' onClick={() => { getImage('https://rukminim2.flixcart.com/image/128/128/xif0q/t-shirt/d/c/u/4xl-db1024-3bros-original-imagt7byg5aw9yqs.jpeg') }} />
                   </div>
               </div>
-              <div className='col-lg-10 img-container'>
+              <div className='col-lg-10 col-10 img-container'>
                   <img id='imgBox' src={fullSize} alt='' />
               </div>
             </div>
           </div>
-          <div className='col-lg-6'>
+          <div className='col-lg-6 col-12'>
             <div className='mt-5'>
               <h4>Brand Name</h4>
               <p>Ratings( 58 customer reviews)</p>
@@ -55,21 +55,21 @@ const ProductDetail = () => {
 
               </p>
               <div className='row text-center'>
-                <div className='col-lg-4'>
+                <div className='col-lg-4 col-4'>
                   <span><FontAwesomeIcon icon={faShippingFast} /></span>
                   <p>Free Delivery</p>
                 </div>
-                <div className='col-lg-4'>
+                <div className='col-lg-4 col-4'>
                   <span><FontAwesomeIcon icon={faShieldHalved} /></span>
                   <p>2 Years Waranty</p>
                 </div>
-                <div className='col-lg-4'>
+                <div className='col-lg-4 col-4'>
                   <span><FontAwesomeIcon icon={faCalendarDays} /></span>
                   <p>15 Days Replacement</p>
                 </div>
               </div>
             </div>
-            <div className='row'>
+            <div className='row container'>
                <div className='col-md-4 col-6'>
                   <Link to="/cart">
                       <button className='btn btn-success text-white  mt-3'><FontAwesomeIcon icon={faCartShopping} />Add to card</button>
@@ -77,7 +77,7 @@ const ProductDetail = () => {
                </div>
                <div className='col-md-4 col-6'>
                   <Link to="/cart">
-                      <button className='btn btn-primary text-white  mt-3'>Buy now</button>
+                      <button className='btn btn-primary text-white  mt-3' >Buy now</button>
                   </Link>
                </div>
             </div>

@@ -1,10 +1,40 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
+    
+    const [inputs, setInputs] = useState({
+        username:"",
+        email:"",
+        mobile:"",
+        password:"",
+    });
+
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setInputs(values => ({...values, [name]: value}))
+      }
+    
+   const handleSubmit = (event) =>{
+    event.preventDefault();
+   
+    axios.post('http://127.0.0.1:8000/api/register',inputs)
+    .then(res => {
+        console.log(res);
+    })
+    .catch(err => {
+        console.log(err);
+    });
+
+   }    
+    
+
   return (
     <>
-                     <section className="h-100 gradient-form" style={{background: "#eee"}}>
+                <section className="h-100 gradient-form" style={{background: "#eee"}}>
                     <div className="container py-5 h-100">
                         <div className="row d-flex justify-content-center align-items-center h-100">
                             <div className="col-xl-10">
@@ -17,35 +47,64 @@ const Register = () => {
                                                     style={{width: "185px" }} alt="logo" />
                                                     <h4 className="mt-1 mb-5 pb-1">Please Register your account</h4>
                                                 </div>
-                                                <form>
+                                                <form onSubmit={handleSubmit}>
                                                     
                                                     <div className="form-outline mb-4">
                                                     <label className="form-label" for="form2Example11">Name</label>
-                                                        <input type="email" id="form2Example11" className="form-control"
-                                                            placeholder="Your name" />
+                                                        <input 
+                                                            className="form-control" 
+                                                            placeholder="Your name"
+                                                            type="text" 
+                                                            name="username"
+                                                            value={inputs.username}
+                                                            onChange={handleChange}
+                                                         />
                                                         
                                                     </div>
                                                     <div className="form-outline mb-4">
                                                     <label className="form-label" for="form2Example11">Email</label>
-                                                        <input type="email" id="form2Example11" className="form-control"
-                                                            placeholder="Your email address" />
-                                                        
+                                                        <input 
+                                                          className="form-control" 
+                                                          placeholder="Your email address" 
+                                                          type="email"
+                                                          name="email"
+                                                          value={inputs.email}
+                                                          onChange={handleChange} 
+                                                          
+                                                          />
                                                     </div>
                                                     <div className="form-outline mb-4">
                                                     <label className="form-label" for="form2Example11">Mobile</label>
-                                                        <input type="email" id="form2Example11" className="form-control"
-                                                            placeholder="Your phone number" />
-                                                        
+                                                        <input 
+                                                           className="form-control" 
+                                                           type="text"
+                                                           name="mobile"
+                                                           placeholder="Your phone number" 
+                                                           value={inputs.mobile}
+                                                           onChange={handleChange}
+                                                        />
                                                     </div>
 
                                                     <div className="form-outline mb-4">
-                                                    <label className="form-label" for="form2Example22">Password</label>
-                                                        <input type="password" id="form2Example22" className="form-control" />
+                                                    <label className="form-label">Password</label>
+                                                        <input  
+                                                         className="form-control"
+                                                         type="password"
+                                                         name="password"
+                                                         placeholder='Password'
+                                                         value={inputs.password}
+                                                         onChange={handleChange}
+                                                         
+                                                         />
                                                         
                                                     </div>
 
                                                     <div className="text-center pt-1 mb-5 pb-1">
-                                                        <button className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Register</button>
+                                                        <button className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" 
+                                                        type="submit">Register
+                                                
+                                                        
+                                                        </button>
                                                     
                                                     </div>
 
